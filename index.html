@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaketAuto</title>
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@500;600;700&family=Roboto:wght@300;400;700;900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body,
+      .wrapper {
+        min-height: 100%;
+        margin-bottom: 10vh;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        display: flex;
+        justify-content: center;
+      }
+      .wrapper {
+        max-width: 1024px;
+      }
+      .head {
+        display: flex;
+        height: 12%;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .menu a {
+        padding: 18px;
+      }
+
+      .get {
+        border-radius: 50px;
+        padding: 20px;
+        margin-left: 30px;
+        background: #16a085;
+        color: #ecf0f1;
+        font-size: 18px;
+        
+      }
+
+      .name {
+        font-size: 30px;
+        font-weight: 700;
+      }
+      .name i {
+        font-size: 45px;
+        color: green;
+      }
+      a {
+        color: #2c3e50;
+        text-decoration: none;
+      }
+      h1 {
+        font-size: 68px;
+        line-height: 4rem;
+        color: #2c3e50;
+      }
+      p {
+        color: #7f8c8d;
+        padding-top: 25px;
+      }
+      figure {
+        flex: 2;
+      }
+
+      img {
+        width: 100%;
+      }
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .center-left {
+        line-height: 2.5rem;
+        width: 400px;
+      }
+      .conteiner {
+        display: flex;
+        justify-content: center;
+      }
+      .li {
+        flex: 1;
+        border-radius: 40px;
+        padding: 5px;
+        margin: 50px 10px 40px 0;
+        background: #2c3e50;
+        color: white;
+        font-size: 16px;
+      }
+      .icons {
+        font-size: 32px;
+        color: black;
+      }
+      .icons a {
+        font-size: 40px;
+        color: #2c3e50;
+        border: 1px solid;
+        border-radius: 30%;
+      }
+      .li i {
+        padding: 5px;
+        padding-left: 22px;
+        font-size: 30px;
+      }
+      .li a {
+        color: #ecf0f1;
+        font-size: 18px;
+      }
+
+      .columns {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 50px;
+      }
+      .note {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border-radius: 20px;
+        padding: 40px;
+
+        flex: 1;
+        aspect-ratio: 2 / 1;
+      }
+      .note i {
+        font-size: 48px;
+        color: green;
+      }
+      button {
+          background: #bdc3c7;
+          color: #ecf0f1;
+          padding: 1rem 2rem;
+          font-size: 1.5rem;
+          border: none;
+          border-radius: 8px;
+          box-shadow: rgba(red, green, blue, alpha);
+          cursor: pointer;
+          transition: all 0.5s ease-out;
+          display: none;
+        }
+
+      @media (max-width: 768px) {
+        .menu a {
+          line-height: 4rem;
+          margin-left: 30px;
+        }
+
+        .conteiner {
+          display: inline;
+          font-size: 12px;
+        }
+        .wrapper {
+          margin-left: 1rem;
+          margin-right: 1rem;
+        }
+        .head {
+          margin-bottom: 8px;
+          height: 10%;
+        }
+        .center {
+          display: block;
+        }
+
+        .name {
+          font-size: 18px;
+        }
+        h1 {
+          font-size: 30px;
+          line-height: 2rem;
+        }
+        .center-left {
+          line-height: 2rem;
+          width: 200px;
+        }
+        .li {
+          margin: 20px 10px;
+        }
+        .li i {
+          font: size 16px;
+        }
+        .icons {
+          margin: 2px;
+        }
+        img {
+          width: 75%;
+          margin-top: 10px;
+        }
+
+        body {
+          display: block;
+        }
+
+        .columns {
+          display: block;
+        }
+        .note {
+         
+          margin: 1rem;
+        }
+        :root {
+          --sidebar-width: 200px;
+        }
+        .menu {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: var(--sidebar-width);
+
+          background: #ecf0f1;
+          transform: translateX(calc(var(--sidebar-width) * -1));
+          transition: all 0.3s ease-out;
+        }
+        .menu--open {
+          transform: none;
+        }
+        header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        button {
+          background: #bdc3c7;
+          color: #ecf0f1;
+          padding: 1rem 2rem;
+          font-size: 1.5rem;
+          border: none;
+          border-radius: 8px;
+          box-shadow: rgba(red, green, blue, alpha);
+          cursor: pointer;
+          transition: all 0.5s ease-out;
+          display: inline;
+        }
+
+        button:hover {
+          background: #16a085;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="head">
+        <div class="name">
+          <i class="las la-gas-pump"></i>
+          bensinon
+        </div>
+
+        <div class="menu">
+          <a href="">Home</a>
+          <a href="">Feature</a>
+          <a href="">Screen</a>
+          <a href="">Pricing</a>
+          <a href="">Team</a>
+          <a href="">Question</a>
+
+          <a class="get" href="">Get started</a>
+        </div>
+        <button onclick="togglMenu()"><i class="las la-bars"></i></button>
+      </header>
+
+      <main class="center">
+        <div class="center-left">
+          <h1>Refueling a car at your address</h1>
+          <p>Delivery service for all types of fuel for your car</p>
+          <div class="conteiner">
+            <div class="li">
+              <i class="lab la-apple"></i>
+              <a href="">Apple store</a>
+            </div>
+
+            <div class="li">
+              <i class="lab la-google-play"></i> <a href="">Google play</a>
+            </div>
+          </div>
+
+          <div class="icons">
+            <a href=""><i class="lab la-instagram"></i></a>
+            <a href=""><i class="lab la-facebook"></i></a>
+            <a href=""><i class="lab la-twitter"></i></a>
+          </div>
+        </div>
+
+        <figure class="center-right">
+          <img
+            src="https://image.freepik.com/free-vector/cute-happy-yellow-automobile-car-with-refueling-gun-cartoon-character_92289-1201.jpg"
+            alt=""
+          />
+        </figure>
+      </main>
+
+      <section class="columns">
+        <div class="note">
+          <i class="las la-clock"></i>
+          <h2>Specified order</h2>
+          <p>Refueling your car at the time and date you specify</p>
+        </div>
+
+        <div class="note">
+          <i class="las la-map-marker"></i>
+          <h2>Delivery</h2>
+          <p>Refueling is carried out anywhere in the city</p>
+        </div>
+
+        <div class="note">
+          <i class="las la-mobile-alt"></i>
+          <h2>Payment types</h2>
+          <p>Make a payment in any way conveniet for you</p>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      function togglMenu() {
+        const menu = document.querySelector(".menu");
+        menu.classList.toggle("menu--open");
+      }
+    </script>
+  </body>
+</html>
